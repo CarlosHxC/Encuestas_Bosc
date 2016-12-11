@@ -1,0 +1,38 @@
+<navigation></navigation>
+<div class="container">
+  <div class="row">
+    <div class="large-12 columns">
+      <h4>Encuestas</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 large-3 columns">
+      <a href="" ui-sref="post_encuesta"class="button">Nueva encuesta</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+
+      <table class="stack">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Ver respuestas</th>
+            <th>Visualizar</th>
+            <th>Compartir</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="l in listEncuestas | orderBy: startDate">
+            <td>{{l.nombre}}</td>
+            <td><a href="" ui-sref="respuestas({id: l._id})">Ver respuestas</a></td>
+            <td><a href="" ui-sref="visualizar({id: l._id})">Visualizar</a></td>
+            <td><input type="text" value="localhost:3000/#/encuestas/a/{{l._id}}"></td>
+            <td><a href="" ng-click="deleteOne(l._id)">Eliminar</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Encuestas</title>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+  crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="./assets/stylesheets/foundation.min.css">
+  <!-- <link rel="stylesheet" href="./assets/stylesheets/app.css"> -->
+  <link rel="stylesheet" href="./bower_components/angularjs-datepicker/src/css/angular-datepicker.css">
+</head>
+<body ng-app="encuestas">
+  <div ui-view></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+   integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+   crossorigin="anonymous"></script>
+   <script src="./assets/javascripts/foundation.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+  <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <!-- <script src="./bower_components/angular-foundation/mm-foundation.js"></script> -->
+  <script src="./bower_components/moment/moment.js"></script>
+  <script src="./bower_components/angular-moment/angular-moment.js"></script>
+  <script src="./bower_components/angularjs-datepicker/src/js/angular-datepicker.js"></script>
+
+  <script src="./app/app.js"></script>
+  <!-- Controllers -->
+  <script src="./app/home/home.controller.js"></script>
+  <script src="./app/encuestas/encuestas_list.controller.js"></script>
+  <script src="./app/encuestas/post_encuesta.controller.js"></script>
+  <script src="./app/encuestas/show_encuesta.controller.js"></script>
+  <script src="./app/encuestas/answer_encuesta.controller.js"></script>
+  <script src="./app/encuestas/answers_list.controller.js"></script>
+  <script src="./app/shared/navigation/navigation.controller.js"></script>
+
+  <!-- Directives -->
+  <script src="./app/shared/navigation/navigation.directive.js"></script>
+
+  <!-- Services -->
+  <script src="./app/shared/authentication/authentication.service.js"></script>
+  <script src="./app/encuestas/encuestas.service.js"></script>
+</body>
+</html>

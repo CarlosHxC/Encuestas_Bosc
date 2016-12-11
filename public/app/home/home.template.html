@@ -1,0 +1,28 @@
+<navigation></navigation>
+<div class="container">
+  <div class="row">
+    <div class="small-12 large-3 columns">
+      <form>
+        <div class="form-group">
+          <label for="loginUser">User</label>
+          <input type="text" class="form-control" id="loginUser" placeholder="Email" ng-model="user.username">
+        </div>
+        <div class="form-group">
+          <label for="loginPass">Password</label>
+          <input type="password" class="form-control" id="loginPass" placeholder="Password" ng-model="user.password">
+        </div>
+        <a href="" ng-click="login(user)" ng-hide="registrarse==true" class="button">Iniciar sesión</a>
+        <a href="" ng-click="register(user)" ng-show="registrarse==true" class="button">Registrarse</a>
+        <a href="" ng-click="registrarse=true" ng-hide="registrarse==true">Registrarse</a>
+        <a href="" ng-click="registrarse=false" ng-show="registrarse==true">Ya tengo una cuenta</a>
+      </form>
+    </div>
+    <div class="small-12 large-9 columns">
+      <h4>Página dedicada a encuestas</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
+        qui consequuntur tempore animi ipsum sapiente ad facere quos ipsam sed
+        maxime molestiae necessitatibus inventore harum dolor earum eum
+        repudiandae ipsa.</p>
+    </div>
+  </div>
+</div>

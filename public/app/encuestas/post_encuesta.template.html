@@ -1,0 +1,117 @@
+<navigation></navigation>
+<div class="container">
+  <div class="row">
+    <div class="small-12 large-12 columns">
+      <h4>Nueva encuesta</h4>
+      <form>
+        <div class="row">
+          <div class="small-12 large-3 columns">
+            <label for="encuesta-name">Nombre</label>
+          </div>
+          <div class="small-12 large-9 columns">
+            <input type="text" id="encuesta-name" placeholder="Nombre de la encuesta" ng-model="encuesta.nombre">
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-12 large-3 columns">
+            <label for="encuesta-inicio">Fecha Inicio</label>
+          </div>
+          <div class="small-12 large-9 columns">
+            <datepicker date-format="yyyy-M-dd">
+              <input type="text" id="encuesta-inicio" ng-model="encuesta.inicio">
+            </datepicker>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-12 large-3 columns">
+            <label for="encuesta-fin">Fecha fin</label>
+          </div>
+          <div class="small-12 large-9 columns">
+            <datepicker date-format="yyyy-M-dd">
+              <input type="text" id="encuesta-fin"ng-model="encuesta.fin">
+            </datepicker>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-12 large-3 columns">
+            <label for="encuesta-tipo">Pregunta</label>
+          </div>
+          <div class="small-12 large-9 columns">
+            <input type="text" id="encuesta-pregunta" placeholder="Nombre de la pregunta" ng-model="encuesta.pregunta">
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-12 large-3 columns">
+            <label for="encuesta-pregunta">Tipo de pregunta</label>
+          </div>
+          <div class="small-12 large-9 columns">
+            <select ng-model="encuesta.tipo">
+              <option value="select">Cuadro de selección</option>
+              <option value="checkbox">Checkbox</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-12 large-3 columns">
+            <label for="encuesta-respuestas">Respuestas</label>
+          </div>
+          <div class="small-12 large-9 columns">
+            <textarea name="" id="" cols="30" rows="10" ng-model="encuesta.respuestas" ng-change="changeRespuestas(encuesta.respuestas)"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-12 large-12 columns">
+            <label for="encuesta-pre">Pregunta por agregar</label>
+          </div>
+          <div class="small-12 large-12 columns">
+            <p>Nombre: {{encuesta.pregunta}}</p>
+            <select ng-if="encuesta.tipo=='select'">
+              <option ng-repeat="x in r track by $index" value="{{x}}">{{x}}</option>
+            </select>
+            <fieldset ng-if="encuesta.tipo=='checkbox'">
+              <legend>Elegir respuesta</legend>
+              <div ng-repeat="x in r track by $index" >
+                <input type="checkbox"  value="{{x}}" id="encuesta-radio"><label for="encuesta-radio">{{x}}</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-12 large-3 columns">
+            <a href="" class="button" ng-click="addQuestion(encuesta)">Agregar pregunta</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 large-12 columns">
+      <h4>Previsualizar</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 large-12 columns">
+      <form>
+        <div class="row" ng-repeat="p in preguntas">
+          <div class="small-12 large-12 columns">
+            <p for="encuesta-previ">{{p.pregunta}}</p>
+            <select ng-if="p.tipo=='select'">
+              <option ng-repeat="x in p.respuestas track by $index" value="x">{{x}}</option>
+            </select>
+            <fieldset ng-if="p.tipo=='checkbox'">
+              <legend>Elegir respuesta</legend>
+              <div ng-repeat="x in p.respuestas track by $index" >
+                <input type="checkbox"  value="x" id="encuesta-radio"><label for="encuesta-radio">{{x}}</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 large-4 columns">
+      <a href="" ng-click="enviar()" class="button">Guardar encuesta</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="top-bar" id="example-menu">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text"><a href="" ui-sref="home">Encuestas de a grapa</a></li>
+    </ul>
+  </div>
+  <div class="top-bar-right" ng-show="userMenu==true">
+    <ul class="menu">
+      <li >
+        <a href="#">{{currentUser.username}}</a>
+        <li><a href="#" ng-click="logout()">Cerrar Sesión</a></li>
+      </li>
+    </ul>
+  </div>
+</div>

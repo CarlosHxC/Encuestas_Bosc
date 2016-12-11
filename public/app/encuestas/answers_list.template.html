@@ -1,0 +1,27 @@
+<navigation></navigation>
+<div class="container">
+  <div class="row">
+    <div class="small-12 large-12 columns">
+      <h4>{{name}}</h4>
+    </div>
+  </div>
+  <div class="row" ng-repeat="a in answers">
+    <div class="small-12 large-12 columns">
+      <h5>{{a._id.name}}</h5>
+      <table>
+        <thead>
+          <tr>
+            <td>Pregunta</td>
+            <td>Respuestas</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="r in a.respuestas">
+            <td>{{r._id}}</td>
+            <td>{{r.total}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

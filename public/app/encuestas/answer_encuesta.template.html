@@ -1,0 +1,34 @@
+<navigation></navigation>
+<div class="container">
+  <div class="row">
+    <div class="small-12 large-12 columns">
+      <h2>{{nombre}}</h2>
+      <h4>Realizada por: {{owner}}</h4>
+    </div>
+  </div>
+  <div class="row" ng-show="outOfRange==true">
+    <div class="small-12 large-12 columns">
+      <div class="callout alert">
+        <h5>Encuesta fuera de rango de tiempo</h5>
+        <p>Disponibilidad de la encuesta: {{start}}  -  {{finish}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="row" ng-repeat="q in questions | orderBy: number">
+    <div class="small-12 large-12 columns">
+      <h5>{{q.question}}</h5>
+      <select ng-if="q.type=='select'" ng-model="respuestas[q.number]">
+        <option ng-repeat="x in q.answers track by $index" value="{{x}}" >{{x}}</option>
+      </select>
+      <fieldset ng-if="q.type=='checkbox'">
+        <legend>Elegir respuesta</legend>
+        <div ng-repeat="x in q.answers track by $index" >
+          <input type="checkbox" id="encuesta-radio" ng-model="respuestas[q.number + '_' + x]"><label for="encuesta-radio">{{x}}</label>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <div class="row">
+    <a href="" class="button" ng-click="enviar(respuestas)" ng-disabled="invalidButton==true">Enviar</a>
+  </div>
+</div>

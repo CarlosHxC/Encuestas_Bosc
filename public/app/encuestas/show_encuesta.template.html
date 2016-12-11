@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="small-12 large-12 columns">
+      <h2>{{nombre}}</h2>
+      <h4>Realizada por: {{owner}}</h4>
+    </div>
+  </div>
+  <div class="row" ng-repeat="q in questions | orderBy: number">
+    <div class="small-12 large-12 columns">
+      <h5>{{q.question}}</h5>
+      <select ng-if="q.type=='select'">
+        <option ng-repeat="x in q.answers track by $index" value="x">{{x}}</option>
+      </select>
+      <fieldset ng-if="q.type=='checkbox'">
+        <legend>Elegir respuesta</legend>
+        <div ng-repeat="x in q.answers track by $index" >
+          <input type="checkbox"  value="x" id="encuesta-radio"><label for="encuesta-radio">{{x}}</label>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</div>
