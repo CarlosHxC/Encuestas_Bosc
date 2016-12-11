@@ -20,7 +20,7 @@
       $rootScope.session = authentication.currentUser();
       surveys.getOne($stateParams.id)
       .then(function(data) {
-        console.log(data);
+        // console.log(data);
         $scope.nombre = data.data.response.nombre;
         $scope.owner = data.data.response.owner;
         if(moment().unix() <= data.data.response.finishDate &&
@@ -45,7 +45,7 @@
       }
       var arrayRespuestas = new Array();
       for(var r in respuestas) {
-        console.log(r + ' - ' + respuestas[r]);
+        // console.log(r + ' - ' + respuestas[r]);
         var obj = new Object();
         var aNombre = r.split('_');
         var qNumber = Number(aNombre[0]);
@@ -73,10 +73,10 @@
         }
       }
 
-      console.log(arrayRespuestas);
+      // console.log(arrayRespuestas);
       surveys.sendAnswer($stateParams.id, $scope.nombre, arrayRespuestas)
       .then(function(data) {
-        console.log(data);
+        // console.log(data);
         alert('Respusta enviada. Favor de recagar la página para una nueva respuesta');
         $scope.invalidButton = true;
       }, function(err) {

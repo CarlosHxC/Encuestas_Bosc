@@ -14,7 +14,7 @@
       $rootScope.session = authentication.currentUser();
       surveys.getAnswers($stateParams.id)
       .then(function(data) {
-        console.log(data);
+        // console.log(data);
 
         $scope.name = data.data.response[0]._id.survey;
         $scope.answers = data.data.response;

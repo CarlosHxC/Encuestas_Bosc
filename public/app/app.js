@@ -40,8 +40,8 @@ app.config(['$httpProvider', '$stateProvider', '$urlRouterProvider', function($h
 ])
 .run(['$rootScope', '$state', 'authentication', function($rootScope, $state, authentication) {
   $rootScope.$watch('session', function() {
-    console.log("cambio");
-    console.log(typeof $rootScope.session);
+    // console.log("cambio");
+    // console.log(typeof $rootScope.session);
     if(typeof $rootScope.session == "undefined") {
       $rootScope.userMenu = false;
     } else {

@@ -11,7 +11,7 @@ module.exports.register = function(req, res) {
       console.log(err);
       return res.status(400).json({"response": 'DB error'});
     }
-    console.log(data);
+    // console.log(data);
 
     if(data.length > 0) {
       return res.status(400).json({response: 'User exists'});

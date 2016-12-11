@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Respuestas = mongoose.model('Respuestas');
 
 module.exports.registerAnswer = function(req, res) {
-  console.log(req.body);
+  // console.log(req.body);
   var r = new Respuestas();
   r.encuesta = req.body.encuesta;
   r.nombre_encuesta = req.body.nombre_encuesta;
@@ -19,7 +19,7 @@ module.exports.registerAnswer = function(req, res) {
       obj.respuestas.push(respuestas[i].respuestas[j]);
     }
     r.pregunta.push(obj);
-    console.log(r);
+    // console.log(r);
   }
 
   r.save(function(err) {

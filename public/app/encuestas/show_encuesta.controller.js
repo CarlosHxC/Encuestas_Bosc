@@ -15,7 +15,7 @@
     function init() {
       surveys.getOne($stateParams.id)
       .then(function(data) {
-        console.log(data);
+        // console.log(data);
         $scope.nombre = data.data.response.nombre;
         $scope.owner = data.data.response.owner;
         $scope.questions = data.data.response.questions;
